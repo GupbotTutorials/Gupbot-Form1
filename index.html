@@ -99,68 +99,35 @@
         color: #00ff00;
         font-size: 12px;
       }
-     .login-box button {
-        background-color: #4caf4f00; /* Green */
-        color: rgb(255, 255, 255);
-        padding: 16px 32px;
-        text-align: center;
-        font-size: 16px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        border: none;
-      }
-      .login-box button {
-        position: relative;
-        display: inline-block;
-        padding: 10px 20px;
-        color: rgb(52, 250, 2);
-        font-size: 15px;
-        text-decoration: none;
-        text-transform: uppercase;
-        overflow: hidden;
-        transition: .5s;
-        margin-top: 40px;
-        letter-spacing: 4px
-      }
-      
-      .login-box button:hover {
-        background: #ffffff;
-        color: rgb(52, 250, 2);
-        border-radius: 5px;
-        box-shadow: 0 0 5px #ffffff,
-                    0 0 25px #ffffff,
-                    0 0 50px #ffffff,
-                    0 0 100px #ffffff;
-      } 
-      /* .login-box button {
-        position: relative;
-        display: inline-block;
-        padding: 10px 20px;
-        color: rgb(52, 250, 2);
-        font-size: 15px;
-        text-decoration: none;
-        text-transform: uppercase;
-        overflow: hidden;
-        transition: .5s;
-        margin-top: 40px;
-        letter-spacing: 4px
-      }
-      
-      .login-box button:hover {
-        background: #ffffff;
-        color: rgb(52, 250, 2);
-        border-radius: 0px;
-        box-shadow: 0 0 5px #ffffff,
-                    0 0 25px #ffffff,
-                    0 0 50px #ffffff,
-                    0 0 100px #ffffff;
-      }
-      
-      */
-      .login-box button span {
-        position: absolute;
-        display: block;
-      } 
+      .login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #00ff00;
+;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #00ff00;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ff00,
+              0 0 25px #00ff00,
+              0 0 50px #00ff00,
+              0 0 100px #00ff00;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
     /*the container must be positioned relative:*/
     .custom-select {
       position: relative;
@@ -528,7 +495,13 @@ Remember to set the width: -->
                             I would like to recieve Gupbot Emails for new updates and tutorials.
                         </span>
                     </div>
-<button>Submit</button>
+                    <a href="#">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Submit
+                    </a>
                   
                 </form>
             </div>
