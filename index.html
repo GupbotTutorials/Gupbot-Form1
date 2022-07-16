@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Gupbot Registration form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+    <meta charset="UTF-8">
+    <style>
+    html {
+        height: 100%;
+      }
+      body {
+        margin:0;
+        padding:0;
+        font-family: sans-serif;
+        background-image: url(https://i.postimg.cc/MHY120Gg/app-icon-GB.png);
+        
+      }
+      
+      .login-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.815);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0,0,0,.6);
+        border-radius: 10px;
+      }
+      
+      .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: rgb(255, 255, 255);
+        text-align: center;
+      }
+      .login-box .terms {
+        position: relative;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        outline: none;
+        background: transparent;
+      }
+    input[type=checkbox]:checked + span
+    {
+        transition: 1s;
+        color: #00ff00;
+    }
+      .login-box .user-box {
+        position: relative;
+      }
+      
+      .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        outline: none;
+        background: transparent;
+      }
+      .login-box .user-box label {
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        pointer-events: none;
+        transition: .5s;
+      }
+    
+      .login-box .user-box label {
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        pointer-events: none;
+        transition: .5s;
+      }
+     
+      
+      .login-box .user-box input:focus ~ label,
+      .login-box .user-box input:valid ~ label {
+        top: -20px;
+        left: 0;
+        color: #00ff00;
+        font-size: 12px;
+      }
+     .login-box button {
+        background-color: #4caf4f00; /* Green */
+        color: rgb(255, 255, 255);
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: none;
+      }
+      .login-box button {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: rgb(52, 250, 2);
+        font-size: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px
+      }
+      
+      .login-box button:hover {
+        background: #ffffff;
+        color: rgb(52, 250, 2);
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ffffff,
+                    0 0 25px #ffffff,
+                    0 0 50px #ffffff,
+                    0 0 100px #ffffff;
+      } 
+      /* .login-box button {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: rgb(52, 250, 2);
+        font-size: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px
+      }
+      
+      .login-box button:hover {
+        background: #ffffff;
+        color: rgb(52, 250, 2);
+        border-radius: 0px;
+        box-shadow: 0 0 5px #ffffff,
+                    0 0 25px #ffffff,
+                    0 0 50px #ffffff,
+                    0 0 100px #ffffff;
+      }
+      
+      */
+      .login-box button span {
+        position: absolute;
+        display: block;
+      } 
+    /*the container must be positioned relative:*/
+    .custom-select {
+      position: relative;
+      font-family: Arial;
+    }
+    
+    .custom-select select {
+      display: none; /*hide original SELECT element:*/
+    }
+    
+    .select-selected {
+      background-color: rgba(0, 0, 0, 0);
+       border-bottom: 1px solid rgb(255, 255, 255);
+       width: 142%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        outline: none;
+        background: transparent;
+    }
+    
+    /*style the arrow inside the select element:*/
+    .select-selected:after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
+    }
+    
+    /*point the arrow upwards when the select box is open (active):*/
+    .select-selected.select-arrow-active:after {
+      border-color: transparent transparent #fff transparent;
+      top: 7px;
+    }
+    
+    /*style the items (options), including the selected item:*/
+    .select-items div,.select-selected {
+      color: #ffffff;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      border-color: transparent transparent rgba(0, 0, 0, 0) transparent;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+    /*style items (options):*/
+    .select-items {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.87);
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+    /*hide the items when the select box is closed:*/
+    .select-hide {
+      display: none;
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+    .select-items div:hover, .same-as-selected {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+      
+     </style>
+</head>
+
+<body>
+    <section>
+        <article>
+            <div class="login-box">
+                <h2>Create a new account</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="" pattern="[A-Za-z]{}" value="" minlength="2" required>
+                        <label>First Name</label>
+                        
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="" pattern="[A-Za-z]{}" value="" minlength="2" required>
+                        <label>Last Name</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="tel" placeholder="ex. 123-456-7890"name="" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        <label>Phone Number</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="date" name="birth" required>
+                        <label>Date of Birth (MM/DD/YYYY)</label>
+                    </div>
+                   <!-- Surround the select box within a "custom-select" DIV element.
+Remember to set the width: -->
+<div class="custom-select" style="width:200px;">
+    <select id="country" name="country" required>
+      <option>Select country</option>
+      <option value="US">United States</option>
+      <option value="AF">Afghanistan</option>
+      <option value="AX">Aland Islands</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="AS">American Samoa</option>
+      <option value="AD">Andorra</option>
+      <option value="AO">Angola</option>
+      <option value="AI">Anguilla</option>
+      <option value="AQ">Antarctica</option>
+      <option value="AG">Antigua and Barbuda</option>
+      <option value="AR">Argentina</option>
+      <option value="AM">Armenia</option>
+      <option value="AW">Aruba</option>
+      <option value="AU">Australia</option>
+      <option value="AT">Austria</option>
+      <option value="AZ">Azerbaijan</option>
+      <option value="BS">Bahamas</option>
+      <option value="BH">Bahrain</option>
+      <option value="BD">Bangladesh</option>
+      <option value="BB">Barbados</option>
+      <option value="BY">Belarus</option>
+      <option value="BE">Belgium</option>
+      <option value="BZ">Belize</option>
+      <option value="BJ">Benin</option>
+      <option value="BM">Bermuda</option>
+      <option value="BT">Bhutan</option>
+      <option value="BO">Bolivia</option>
+      <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+      <option value="BA">Bosnia and Herzegovina</option>
+      <option value="BW">Botswana</option>
+      <option value="BV">Bouvet Island</option>
+      <option value="BR">Brazil</option>
+      <option value="IO">British Indian Ocean Territory</option>
+      <option value="BN">Brunei Darussalam</option>
+      <option value="BG">Bulgaria</option>
+      <option value="BF">Burkina Faso</option>
+      <option value="BI">Burundi</option>
+      <option value="KH">Cambodia</option>
+      <option value="CM">Cameroon</option>
+      <option value="CA">Canada</option>
+      <option value="CV">Cape Verde</option>
+      <option value="KY">Cayman Islands</option>
+      <option value="CF">Central African Republic</option>
+      <option value="TD">Chad</option>
+      <option value="CL">Chile</option>
+      <option value="CN">China</option>
+      <option value="CX">Christmas Island</option>
+      <option value="CC">Cocos (Keeling) Islands</option>
+      <option value="CO">Colombia</option>
+      <option value="KM">Comoros</option>
+      <option value="CG">Congo</option>
+      <option value="CK">Cook Islands</option>
+      <option value="CR">Costa Rica</option>
+      <option value="CI">Cote D'Ivoire</option>
+      <option value="HR">Croatia</option>
+      <option value="CU">Cuba</option>
+      <option value="CW">Curacao</option>
+      <option value="CY">Cyprus</option>
+      <option value="CZ">Czech Republic</option>
+      <option value="DK">Denmark</option>
+      <option value="DJ">Djibouti</option>
+      <option value="DM">Dominica</option>
+      <option value="DO">Dominican Republic</option>
+      <option value="EC">Ecuador</option>
+      <option value="EG">Egypt</option>
+      <option value="SV">El Salvador</option>
+      <option value="GQ">Equatorial Guinea</option>
+      <option value="ER">Eritrea</option>
+      <option value="EE">Estonia</option>
+      <option value="ET">Ethiopia</option>
+      <option value="FK">Falkland Islands (Malvinas)</option>
+      <option value="FO">Faroe Islands</option>
+      <option value="FJ">Fiji</option>
+      <option value="FI">Finland</option>
+      <option value="FR">France</option>
+      <option value="GF">French Guiana</option>
+      <option value="PF">French Polynesia</option>
+      <option value="TF">French Southern Territories</option>
+      <option value="GA">Gabon</option>
+      <option value="GM">Gambia</option>
+      <option value="GE">Georgia</option>
+      <option value="DE">Germany</option>
+      <option value="GH">Ghana</option>
+      <option value="GI">Gibraltar</option>
+      <option value="GR">Greece</option>
+      <option value="GL">Greenland</option>
+      <option value="GD">Grenada</option>
+      <option value="GP">Guadeloupe</option>
+      <option value="GU">Guam</option>
+      <option value="GT">Guatemala</option>
+      <option value="GG">Guernsey</option>
+      <option value="GN">Guinea</option>
+      <option value="GW">Guinea-Bissau</option>
+      <option value="GY">Guyana</option>
+      <option value="HT">Haiti</option>
+      <option value="HM">Heard Island and Mcdonald Islands</option>
+      <option value="VA">Holy See (Vatican City State)</option>
+      <option value="HN">Honduras</option>
+      <option value="HK">Hong Kong</option>
+      <option value="HU">Hungary</option>
+      <option value="IS">Iceland</option>
+      <option value="IN">India</option>
+      <option value="ID">Indonesia</option>
+      <option value="IR">Iran</option>
+      <option value="IQ">Iraq</option>
+      <option value="IE">Ireland</option>
+      <option value="IM">Isle of Man</option>
+      <option value="IL">Israel</option>
+      <option value="IT">Italy</option>
+      <option value="JM">Jamaica</option>
+      <option value="JP">Japan</option>
+      <option value="JE">Jersey</option>
+      <option value="JO">Jordan</option>
+      <option value="KZ">Kazakhstan</option>
+      <option value="KE">Kenya</option>
+      <option value="KI">Kiribati</option>
+      <option value="KP">North Korea</option>
+      <option value="KR">South Korea</option>
+      <option value="XK">Kosovo</option>
+      <option value="KW">Kuwait</option>
+      <option value="KG">Kyrgyzstan</option>
+      <option value="LA">Lao </option>
+      <option value="LV">Latvia</option>
+      <option value="LB">Lebanon</option>
+      <option value="LS">Lesotho</option>
+      <option value="LR">Liberia</option>
+      <option value="LY">Libyan Arab Jamahiriya</option>
+      <option value="LI">Liechtenstein</option>
+      <option value="LT">Lithuania</option>
+      <option value="LU">Luxembourg</option>
+      <option value="MO">Macao</option>
+      <option value="MK">Macedonia</option>
+      <option value="MG">Madagascar</option>
+      <option value="MW">Malawi</option>
+      <option value="MY">Malaysia</option>
+      <option value="MV">Maldives</option>
+      <option value="ML">Mali</option>
+      <option value="MT">Malta</option>
+      <option value="MH">Marshall Islands</option>
+      <option value="MQ">Martinique</option>
+      <option value="MR">Mauritania</option>
+      <option value="MU">Mauritius</option>
+      <option value="YT">Mayotte</option>
+      <option value="MX">Mexico</option>
+      <option value="FM">Micronesia</option>
+      <option value="MD">Moldova</option>
+      <option value="MC">Monaco</option>
+      <option value="MN">Mongolia</option>
+      <option value="ME">Montenegro</option>
+      <option value="MS">Montserrat</option>
+      <option value="MA">Morocco</option>
+      <option value="MZ">Mozambique</option>
+      <option value="MM">Myanmar</option>
+      <option value="NA">Namibia</option>
+      <option value="NR">Nauru</option>
+      <option value="NP">Nepal</option>
+      <option value="NL">Netherlands</option>
+      <option value="AN">Netherlands Antilles</option>
+      <option value="NC">New Caledonia</option>
+      <option value="NZ">New Zealand</option>
+      <option value="NI">Nicaragua</option>
+      <option value="NE">Niger</option>
+      <option value="NG">Nigeria</option>
+      <option value="NU">Niue</option>
+      <option value="NF">Norfolk Island</option>
+      <option value="MP">Northern Mariana Islands</option>
+      <option value="NO">Norway</option>
+      <option value="OM">Oman</option>
+      <option value="PK">Pakistan</option>
+      <option value="PW">Palau</option>
+      <option value="PS">Palestinian Territory</option>
+      <option value="PA">Panama</option>
+      <option value="PG">Papua New Guinea</option>
+      <option value="PY">Paraguay</option>
+      <option value="PE">Peru</option>
+      <option value="PH">Philippines</option>
+      <option value="PN">Pitcairn</option>
+      <option value="PL">Poland</option>
+      <option value="PT">Portugal</option>
+      <option value="PR">Puerto Rico</option>
+      <option value="QA">Qatar</option>
+      <option value="RE">Reunion</option>
+      <option value="RO">Romania</option>
+      <option value="RU">Russian Federation</option>
+      <option value="RW">Rwanda</option>
+      <option value="BL">Saint Barthelemy</option>
+      <option value="SH">Saint Helena</option>
+      <option value="KN">Saint Kitts and Nevis</option>
+      <option value="LC">Saint Lucia</option>
+      <option value="MF">Saint Martin</option>
+      <option value="PM">Saint Pierre and Miquelon</option>
+      <option value="VC">Saint Vincent and the Grenadines</option>
+      <option value="WS">Samoa</option>
+      <option value="SM">San Marino</option>
+      <option value="ST">Sao Tome and Principe</option>
+      <option value="SA">Saudi Arabia</option>
+      <option value="SN">Senegal</option>
+      <option value="RS">Serbia</option>
+      <option value="CS">Serbia and Montenegro</option>
+      <option value="SC">Seychelles</option>
+      <option value="SL">Sierra Leone</option>
+      <option value="SG">Singapore</option>
+      <option value="SX">Sint Maarten</option>
+      <option value="SK">Slovakia</option>
+      <option value="SI">Slovenia</option>
+      <option value="SB">Solomon Islands</option>
+      <option value="SO">Somalia</option>
+      <option value="ZA">South Africa</option>
+      <option value="GS">South Georgia and the South Sandwich Islands</option>
+      <option value="SS">South Sudan</option>
+      <option value="ES">Spain</option>
+      <option value="LK">Sri Lanka</option>
+      <option value="SD">Sudan</option>
+      <option value="SR">Suriname</option>
+      <option value="SJ">Svalbard and Jan Mayen</option>
+      <option value="SZ">Swaziland</option>
+      <option value="SE">Sweden</option>
+      <option value="CH">Switzerland</option>
+      <option value="SY">Syrian Arab Republic</option>
+      <option value="TW">Taiwan, Province of China</option>
+      <option value="TJ">Tajikistan</option>
+      <option value="TZ">Tanzania</option>
+      <option value="TH">Thailand</option>
+      <option value="TL">Timor-Leste</option>
+      <option value="TG">Togo</option>
+      <option value="TK">Tokelau</option>
+      <option value="TO">Tonga</option>
+      <option value="TT">Trinidad and Tobago</option>
+      <option value="TN">Tunisia</option>
+      <option value="TR">Turkey</option>
+      <option value="TM">Turkmenistan</option>
+      <option value="TC">Turks and Caicos Islands</option>
+      <option value="TV">Tuvalu</option>
+      <option value="UG">Uganda</option>
+      <option value="UA">Ukraine</option>
+      <option value="AE">United Arab Emirates</option>
+      <option value="GB">United Kingdom</option>
+      <option value="UM">United States Minor Outlying Islands</option>
+      <option value="UY">Uruguay</option>
+      <option value="UZ">Uzbekistan</option>
+      <option value="VU">Vanuatu</option>
+      <option value="VE">Venezuela</option>
+      <option value="VN">Viet Nam</option>
+      <option value="VG">Virgin Islands, British</option>
+      <option value="VI">Virgin Islands, U.S.</option>
+      <option value="WF">Wallis and Futuna</option>
+      <option value="EH">Western Sahara</option>
+      <option value="YE">Yemen</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>
+  </select>
+</div>
+                    <div class="terms">
+                        <input type="checkbox" />
+                        <span>
+                            I would like to recieve Gupbot Emails for new updates and tutorials.
+                        </span>
+                    </div>
+<button>Submit</button>
+                  
+                </form>
+            </div>
+        </article>
+
+    </section>
+    <script>
+        function closeAllSelect(elmnt) {
+          /*a function that will close all select boxes in the document,
+          except the current select box:*/
+          var x, y, i, xl, yl, arrNo = [];
+          x = document.getElementsByClassName("select-items");
+          y = document.getElementsByClassName("select-selected");
+          xl = x.length;
+          yl = y.length;
+          for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+              arrNo.push(i)
+            } else {
+              y[i].classList.remove("select-arrow-active");
+            }
+          }
+          for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+              x[i].classList.add("select-hide");
+            }
+          }
+        }
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+        </script>
+</body>
+
+</html>
